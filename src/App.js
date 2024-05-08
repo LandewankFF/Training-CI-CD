@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Belajar CI CD dengan menggunakan GitHub Action
+          Belajar CI CD dengan menggunakan GitHub Action, test pertama
         </p>
         <a
           className="App-link"
