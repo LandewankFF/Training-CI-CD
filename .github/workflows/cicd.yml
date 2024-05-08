@@ -1,4 +1,4 @@
-name: CI/CD 
+name: CICD Using Github Action
 
 on:
   push:
