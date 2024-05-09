@@ -31,7 +31,7 @@ jobs:
         git config --global user.name "${{ vars.GIT_USERNAME }}"
     - name: Deploy with gh-pages
       run: |
-        git remote set-url origin https://git:${TOKEN}@github.com/LandewankFF/Training-CI-CD.git
+         git remote set-url origin https://git:${{ secrets.TOKEN }}@github.com/LandewankFF/Training-CI-CD.git
         npm run deploy "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
