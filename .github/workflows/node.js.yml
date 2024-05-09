@@ -27,9 +27,9 @@ jobs:
     - run: npm test
     - name: Deploy with gh-pages
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }} 
-        REPO: ${{ secrets.REPO }}  
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Menyertakan variabel rahasia GITHUB_TOKEN
+        REPO: "LandewankFF/Training-CI-CD/"  # Ganti dengan nama pengguna dan nama repository Anda
       run: |
-        npm install -g gh-pages  # Instal gh-pages jika belum ada
+        npm install -g gh-pages  # Menginstal gh-pages secara global jika belum ada
         git remote set-url origin https://github.com/${REPO}.git
         npm run deploy
