@@ -1,6 +1,6 @@
 {
   "name": "training2",
-  "homepages": "https://LandewankFF.github.io/Training-CI-CD",
+  "homepage": "https://LandewankFF.github.io/Training-CI-CD",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
