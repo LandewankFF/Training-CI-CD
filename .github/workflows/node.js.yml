@@ -1,5 +1,4 @@
-
-name: cd cd on github
+name: cd on github
 
 on:
   push:
@@ -15,7 +14,6 @@ jobs:
     strategy:
       matrix:
         node-version: [20.12.2]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
@@ -28,8 +26,10 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - name: Deploy with gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }} 
+        REPO: ${{ secrets.REPO }}  
       run: |
-        git remote set-url origin https://git:${TOKEN}@github.com/${REPO}.git
-        npm run deploy "github-actions-bot <support+actions@github.com>"
-         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        npm install -g gh-pages  # Instal gh-pages jika belum ada
+        git remote set-url origin https://github.com/${REPO}.git
+        npm run deploy
